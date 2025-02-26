@@ -13,12 +13,16 @@ export function Header() {
 
             <Aside>
                 <div>
-                    <MapPin size={22} weight="fill" alt="Localização"/>
+                    <MapPin
+                        size={22}
+                        weight="fill"
+                        alt="Localização"
+                    />
                     <span>Porto Alegre, RS</span>
                 </div>
 
-                <NavLink to="/checkout" alt="Carrinho de compras">
-                    <ShoppingCart size={22} weight="fill" />
+                <NavLink to="/checkout" >
+                    <ShoppingCart size={22} weight="fill" alt="Carrinho de compras" />
                 </NavLink>
             </Aside>
         </HeaderContainer>
