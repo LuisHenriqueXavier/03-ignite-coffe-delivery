@@ -4,7 +4,7 @@ import herobg from "../../assets/herobg.svg";
 export const HeadingContainer = styled.div`
   background: url(${herobg}) no-repeat center;
   background-size: cover;
-  max-height: 544px;
+  height: 544px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ export const Heading = styled.div`
 
     > img {
         max-width: 476px;
-        max-height: 360px;
+        margin: 0 auto;
     }
   `;
 
@@ -68,7 +68,7 @@ export const Info = styled.div`
   }
 `
 
-export const CoffeeList = styled.main`
+export const CoffeeContainer = styled.div`
   padding: 32px 160px;
 
   > h2 {
@@ -76,5 +76,15 @@ export const CoffeeList = styled.main`
       font-size: 2rem;
       line-height: 130%;
       font-weight: 800;
+      margin-bottom: 54px;
   }
 `;
+
+export const CoffeeList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 2rem;
+`;
+
+
+
