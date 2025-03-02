@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Product } from '../../../../@types/product';
 import { AddToCart, AmountInput, ProductItemContainer, Tags } from './styles';
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
@@ -8,9 +9,18 @@ interface ProductItemProps {
 }
 
 export function ProductItem({ product }: ProductItemProps) {
+    const [amount, setAmount] = useState(1);
 
+    function HandleIncrease() {
+        setAmount((prev) => prev + 1);
+    }
 
-    const formattedPrice = product.price.toFixed(2).replace('.', ',')
+    function HandleDecrease() {
+        setAmount((prev) => (prev > 1 ? prev - 1 : 1));
+    }
+
+    const formattedPrice = product.price.toFixed(2).replace('.', ',');
+
 
     return (
         <ProductItemContainer>
@@ -28,12 +38,19 @@ export function ProductItem({ product }: ProductItemProps) {
                 </span>
                 <form>
                     <AmountInput>
-                        <button type="button"><Minus size={14} /></button>
-                        <input type="number" defaultValue={1} />
-                        <button type="button"><Plus size={14} /></button>
+                        <button type="button" onClick={HandleDecrease}>
+                            <Minus size={14} />
+                        </button>
+                        <input 
+                            type="number"  
+                            value={amount}
+                        />
+                        <button type="button" onClick={HandleIncrease}>
+                            <Plus size={14} />
+                        </button>
                     </AmountInput>
                     
-                    <button type="submit">
+                    <button type="submit" onClick={(e) => e.preventDefault()}>
                         <ShoppingCart size={22} weight='fill' />
                     </button>
                 </form>

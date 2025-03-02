@@ -135,7 +135,6 @@ export const AmountInput = styled.div`
     border: none;
     background: transparent;
     font-size: 1rem;
-    font-weight: bold;
   }
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-inner-spin-button,
@@ -146,6 +145,7 @@ export const AmountInput = styled.div`
 
   /* Firefox */
   input {
+    appearance: textfield;
     -moz-appearance: textfield;
   }
 `;

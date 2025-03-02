@@ -69,7 +69,8 @@ export const Info = styled.div`
 `
 
 export const CoffeeContainer = styled.div`
-  padding: 32px 160px;
+  margin: 0 auto;
+  max-width: 70rem;  
 
   > h2 {
       font-family: 'Baloo 2', sans-serif;
@@ -81,6 +82,8 @@ export const CoffeeContainer = styled.div`
 `;
 
 export const CoffeeList = styled.div`
+  margin: 0 auto;
+  max-width: 70rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem 2rem;
