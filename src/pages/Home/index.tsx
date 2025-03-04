@@ -73,7 +73,12 @@ export function Home() {
                 <CoffeeList>
                     {products.map((product) => {
                         return (
-                                <ProductItem product={product} />
+                                <ProductItem 
+                                    product={product} 
+                                    handleSubmit={() => {}} 
+                                    handleIncrease={() => {}} 
+                                    handleDecrease={() => {}} 
+                                />
                         )
                     })}
                 </CoffeeList>

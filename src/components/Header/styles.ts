@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 32px 160px;
-  align-items: center; 
+  align-items: center;
+  background-color: ${props => props.theme['white']}; 
+  z-index: 1000; 
+  box-shadow: 0px 4px 6px ${props => props.theme['purple-light']}; 
 `;
+
 
 
 export const Aside = styled.aside`
@@ -42,4 +50,6 @@ export const Aside = styled.aside`
     border-radius: 6px;
 
     position: relative;
+
+    
   }`

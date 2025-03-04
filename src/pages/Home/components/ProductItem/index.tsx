@@ -3,23 +3,33 @@ import { Product } from '../../../../@types/product';
 import { AddToCart, AmountInput, ProductItemContainer, Tags } from './styles';
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 
-
 interface ProductItemProps {
-    product: Product
+    product: Product;
+    handleSubmit: (e: React.FormEvent) => void;
+    handleIncrease: () => void;
+    handleDecrease: () => void;
 }
 
 export function ProductItem({ product }: ProductItemProps) {
-    const [amount, setAmount] = useState(1);
+    const [amount, setAmount] = useState<number>(1);
 
-    function HandleIncrease() {
+    const HandleIncrease = () => {
         setAmount((prev) => prev + 1);
-    }
+    };
 
-    function HandleDecrease() {
+    const HandleDecrease = () => {
         setAmount((prev) => (prev > 1 ? prev - 1 : 1));
-    }
+    };
 
-    const formattedPrice = product.price.toFixed(2).replace('.', ',');
+    const formattedPrice: string = product.price.toFixed(2).replace('.', ',');
+
+    const HandleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (amount > 0) {
+            alert(`${amount} ${product.name} adicionado ao carrinho!`);
+        }
+    };
+
 
 
     return (
@@ -36,7 +46,7 @@ export function ProductItem({ product }: ProductItemProps) {
                 <span>
                     R$ <strong>{formattedPrice}</strong>
                 </span>
-                <form>
+                <form onSubmit={HandleSubmit}>
                     <AmountInput>
                         <button type="button" onClick={HandleDecrease}>
                             <Minus size={14} />
@@ -50,7 +60,7 @@ export function ProductItem({ product }: ProductItemProps) {
                         </button>
                     </AmountInput>
                     
-                    <button type="submit" onClick={(e) => e.preventDefault()}>
+                    <button type="submit">
                         <ShoppingCart size={22} weight='fill' />
                     </button>
                 </form>

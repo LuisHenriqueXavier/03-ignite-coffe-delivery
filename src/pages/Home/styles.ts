@@ -11,6 +11,7 @@ export const HeadingContainer = styled.div`
 `;
 
 export const Heading = styled.div`
+margin-top: 200px;
   width: 100vw;
   padding: 0 160px;
   display: grid;
@@ -69,7 +70,7 @@ export const Info = styled.div`
 `
 
 export const CoffeeContainer = styled.div`
-  margin: 0 auto;
+  margin: 100px auto;
   max-width: 70rem;  
 
   > h2 {
@@ -82,7 +83,6 @@ export const CoffeeContainer = styled.div`
 `;
 
 export const CoffeeList = styled.div`
-  margin: 0 auto;
   max-width: 70rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
