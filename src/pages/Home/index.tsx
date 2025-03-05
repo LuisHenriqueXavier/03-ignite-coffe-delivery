@@ -74,10 +74,11 @@ export function Home() {
                     {products.map((product) => {
                         return (
                                 <ProductItem 
-                                    product={product} 
-                                    handleSubmit={() => {}} 
-                                    handleIncrease={() => {}} 
-                                    handleDecrease={() => {}} 
+                                    key={product.id}
+                                    product={product}
+                                    handleSubmit={() => {}}
+                                    handleIncrease={() => {}}
+                                    handleDecrease={() => {}}
                                 />
                         )
                     })}
