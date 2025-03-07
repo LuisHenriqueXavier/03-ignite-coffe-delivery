@@ -120,6 +120,10 @@ export const PaymentMethod = styled(CheckoutDefault).attrs({ as: 'div'})`
     flex-direction: row;
     gap: 0.5rem;
 
+    > svg {
+        color: ${props => props.theme["purple-dark"]};
+      }
+
     > div {
     
     > h2 {
