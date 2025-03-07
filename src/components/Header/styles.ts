@@ -51,5 +51,23 @@ export const Aside = styled.aside`
 
     position: relative;
 
+    > span{
+      
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: ${props => props.theme["yellow-dark"]};
+    color: ${props => props.theme.white};
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999px;
+    line-height: 1.3;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
     
   }`

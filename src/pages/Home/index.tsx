@@ -76,9 +76,6 @@ export function Home() {
                                 <ProductItem 
                                     key={product.id}
                                     product={product}
-                                    handleSubmit={() => {}}
-                                    handleIncrease={() => {}}
-                                    handleDecrease={() => {}}
                                 />
                         )
                     })}

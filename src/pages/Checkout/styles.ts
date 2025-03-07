@@ -58,6 +58,54 @@ export const AddressContent = styled(CheckoutDefault).attrs({ as: 'div' })`
     }
 `;
 
+export const AddressForm = styled.form`
+  display: grid;
+  grid-template-columns: 1fr 1fr 3.75rem; /* Terceira coluna menor para UF */
+  margin-top: 2rem;
+  gap: 1rem 0.75rem;
+
+  > input{
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    border: solid 1px ${props => props.theme["base-button"]}; 
+    color: ${props => props.theme["base-label"]};
+    background-color: ${props => props.theme["base-input"]};
+
+    &:focus{
+        border: solid 1px ${props => props.theme["yellow-dark"]};
+    }
+  }
+
+  input:nth-child(1) { /* CEP ocupa linha inteira */
+    grid-column: 1 / 2;
+    
+  }
+
+  input:nth-child(2) { /* Rua ocupa linha inteira */
+    grid-column: span 3;
+  }
+
+  input:nth-child(3) { /* Número */
+    grid-column: span 1;
+  }
+
+  input:nth-child(4) { /* Complemento ocupa 2 colunas */
+    grid-column: span 2;
+  }
+
+  input:nth-child(5), /* Bairro */
+  input:nth-child(6) { /* Cidade */
+    grid-column: span 1;
+  }
+
+  input:nth-child(7) { /* UF ocupa apenas um espaço */
+    text-transform: uppercase;
+    text-align: center;
+  }
+`;
+
 export const PaymentContent = styled(CheckoutDefault).attrs({ as: 'div' })`
     border-radius: 6px 44px 6px 44px;
 `;
