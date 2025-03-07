@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const CheckoutContainer = styled.main`
     max-width: 70rem;
     margin: 9.5rem auto;
@@ -103,6 +104,71 @@ export const AddressForm = styled.form`
   input:nth-child(7) { /* UF ocupa apenas um espaço */
     text-transform: uppercase;
     text-align: center;
+  }
+`;
+
+export const PaymentMethod = styled(CheckoutDefault).attrs({ as: 'div'})`
+  border-radius: 6px;
+  gap: 2rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+
+  > header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    > div {
+    
+    > h2 {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.3;
+        color: ${props => props.theme["base-subtitle"]};
+
+    }
+    > span {
+        font-size: 0.875rem;
+        line-height: 1.3;
+        font-weight: 400;
+        color: ${props => props.theme["base-text"]};
+    }
+}
+  }
+
+  > footer {
+    gap: 1.75rem;
+    display: flex;
+    flex-direction: row;
+
+    > button {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      padding: 1rem;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      cursor: pointer;
+      background-color: ${props => props.theme["base-button"]};
+
+      &:hover {
+            background-color: ${(props) => props.theme['base-hover']};
+          }
+
+      > svg {
+        color: ${props => props.theme["purple-dark"]};
+      }
+
+      &:focus{
+        border: solid 1px ${props => props.theme["purple-dark"]};
+        background-color: ${props => props.theme["purple-light"]};
+        color: ${props => props.theme["purple-dark"]};
+    }
+    }
   }
 `;
 

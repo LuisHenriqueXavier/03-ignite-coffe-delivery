@@ -1,6 +1,5 @@
-import { MapPinLine } from "phosphor-react";
-import { AddressContent, AddressForm, CheckoutContainer, PaymentContent } from "./styles";
-import InputMask from "react-input-mask";
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money, } from "phosphor-react";
+import { AddressContent, AddressForm, CheckoutContainer, PaymentContent, PaymentMethod } from "./styles";
 
 
 
@@ -18,7 +17,7 @@ export function Checkout() {
                         </div>
                     </div>
                     <AddressForm>
-                        <InputMask  placeholder="CEP" mask="9999-999" />
+                        <input type="text" placeholder="CEP" />
                         <input type="text" placeholder="Rua" />
                         <input type="text" placeholder="Número" />
                         <input type="text" placeholder="Complemento" />
@@ -27,6 +26,22 @@ export function Checkout() {
                         <input type="text" placeholder="UF" />
                     </AddressForm>
                 </AddressContent>
+                <PaymentMethod>
+                    <header>
+                        <CurrencyDollar size={22} />
+                        <div>
+                            <h2>Pagamento</h2>
+                            <span>
+                                O pagamento é feito na entrega. Escolha a forma que deseja pagar
+                            </span>
+                        </div>
+                    </header>
+                    <footer>
+                        <button><CreditCard size={16} />CARTÃO DE CRÉDITO</button>   
+                        <button><Bank size={16} />CCARTÃO DE DÉBITO</button>   
+                        <button><Money size={16} />DINHEIRO</button>   
+                    </footer>
+                </PaymentMethod>
             </section>
             <section>
                 <h1>Cafés selecionados</h1>
