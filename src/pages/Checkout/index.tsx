@@ -1,5 +1,6 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money, } from "phosphor-react";
 import { AddressContent, AddressForm, CheckoutContainer, PaymentContent, PaymentMethod } from "./styles";
+import { CoffeeCard } from "./Components/CoffeeCard";
 
 
 
@@ -38,7 +39,7 @@ export function Checkout() {
                     </header>
                     <footer>
                         <button><CreditCard size={16} />CARTÃO DE CRÉDITO</button>   
-                        <button><Bank size={16} />CCARTÃO DE DÉBITO</button>   
+                        <button><Bank size={16} />CARTÃO DE DÉBITO</button>   
                         <button><Money size={16} />DINHEIRO</button>   
                     </footer>
                 </PaymentMethod>
@@ -46,7 +47,7 @@ export function Checkout() {
             <section>
                 <h1>Cafés selecionados</h1>
                 <PaymentContent>
-
+                    <CoffeeCard />
                 </PaymentContent>
             </section>
         </CheckoutContainer>

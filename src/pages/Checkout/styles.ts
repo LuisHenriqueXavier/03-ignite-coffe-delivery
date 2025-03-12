@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { Separator as RadixSeparator } from "@radix-ui/react-separator";
 
 
 export const CheckoutContainer = styled.main`
     max-width: 70rem;
+    width: 100%;
     margin: 9.5rem auto;
     display: grid;
     grid-template-columns: 1fr 28rem;
@@ -148,6 +150,7 @@ export const PaymentMethod = styled(CheckoutDefault).attrs({ as: 'div'})`
     flex-direction: row;
 
     > button {
+      flex: 1;
       display: flex;
       gap: 0.75rem;
       align-items: center;
@@ -164,13 +167,13 @@ export const PaymentMethod = styled(CheckoutDefault).attrs({ as: 'div'})`
           }
 
       > svg {
-        color: ${props => props.theme["purple-dark"]};
+        color: ${props => props.theme.purple};
       }
 
       &:focus{
-        border: solid 1px ${props => props.theme["purple-dark"]};
+        border: solid 1px ${props => props.theme.purple};
         background-color: ${props => props.theme["purple-light"]};
-        color: ${props => props.theme["purple-dark"]};
+        color: ${props => props.theme.purple};
     }
     }
   }
@@ -178,4 +181,21 @@ export const PaymentMethod = styled(CheckoutDefault).attrs({ as: 'div'})`
 
 export const PaymentContent = styled(CheckoutDefault).attrs({ as: 'div' })`
     border-radius: 6px 44px 6px 44px;
+`;
+
+export const Separator = styled(RadixSeparator)`
+    background-color: ${props => props.theme["base-button"]};
+    height: 1px;
+    width: 100%;
+    margin: 24px 0;
+`;
+
+export const CoffeeCard = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    > img {
+        border-radius: 6px;
+    }
 `;

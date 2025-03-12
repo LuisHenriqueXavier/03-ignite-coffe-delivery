@@ -1,5 +1,5 @@
 // Importa os hooks necessários do React
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 // Importa o tipo Product de um arquivo de tipos
 import { Product } from "../@types/product";
 
@@ -49,3 +49,8 @@ export function CartContextProvider({ children }: { children: ReactNode }) {
         </CartContext.Provider>
     );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export function useCart() {
+    return useContext(CartContext);
+  }
