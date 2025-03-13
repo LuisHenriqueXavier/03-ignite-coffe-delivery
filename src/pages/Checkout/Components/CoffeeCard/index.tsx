@@ -1,21 +1,62 @@
-import { useCart } from "../../../../contexts/CartContext";
-import { CoffeeCardContainer } from "./styles";
-
+import { useCart } from "../../../../contexts/CartContext"; // Usa o hook do contexto
+import { Actions, AmountInputContainer, CoffeeCardContainer, CoffeeDetails, CoffeeInfo, CoffeeToBuy } from "./styles";
+import { Minus, Plus, Trash } from "phosphor-react";
+import { Separator } from "@radix-ui/react-separator";
 
 export function CoffeeCard() {
-    const { products } = useCart(); // Obtém os produtos do carrinho
+    const { products, updateProductQuantity, removeProductFromCart } = useCart(); // Obtém funções do contexto
+
+    function handleIncrease(id: string, quantity: number) {
+        updateProductQuantity(id, quantity + 1);
+    }
+
+    function handleDecrease(id: string, quantity: number) {
+        if (quantity > 1) {
+            updateProductQuantity(id, quantity - 1);
+        }
+    }
+
+    function handleRemove(id: string) {
+        removeProductFromCart(id);
+    }
 
     return (
         <CoffeeCardContainer>
             {products.length > 0 ? (
-                <div>
-                    {products.map((item) => (
-                        <div key={item.id}>
-                            <img src={item.img} alt="Xícara de café" />
-                            <span>{item.name}</span> - {item.quantity}x R$ {item.price.toFixed(2)}
+                products.map((item) => (
+                    <CoffeeToBuy key={item.id}>
+                        <div>
+                            <CoffeeInfo>
+                                <img src={item.img} alt={item.name} />
+                                <CoffeeDetails>
+                                    <span>{item.name}</span>
+                                    <Actions>
+                                        <AmountInputContainer>
+                                            <button type="button" onClick={() => handleDecrease(item.id, item.quantity)}>
+                                                <Minus size={14} />
+                                            </button>
+                                            <input
+                                                type="number"
+                                                value={item.quantity}
+                                                readOnly
+                                            />
+                                            <button type="button" onClick={() => handleIncrease(item.id, item.quantity)}>
+                                                <Plus size={14} />
+                                            </button>
+                                        </AmountInputContainer>
+                                        <button type="button" onClick={() => handleRemove(item.id)}>
+                            <Trash size={18} /> Remover
+                        </button>
+                                    </Actions>
+                                </CoffeeDetails>
+                            </CoffeeInfo>
+                            
+                            <Separator style={{ margin: "2.5rem 0 1.5rem 0", height: "1px", backgroundColor: "#ccc", width: "140%" }} />
                         </div>
-                    ))}
-                </div>
+                        <label>R$ {item.price.toFixed(2)}</label>
+                        
+                    </CoffeeToBuy>
+                ))
             ) : (
                 <p>O carrinho está vazio.</p>
             )}

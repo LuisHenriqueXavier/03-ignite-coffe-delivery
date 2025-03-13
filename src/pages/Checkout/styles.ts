@@ -190,12 +190,3 @@ export const Separator = styled(RadixSeparator)`
     margin: 24px 0;
 `;
 
-export const CoffeeCard = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-
-    > img {
-        border-radius: 6px;
-    }
-`;

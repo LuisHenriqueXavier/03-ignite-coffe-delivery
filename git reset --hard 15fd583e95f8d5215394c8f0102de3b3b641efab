@@ -1,0 +1,77 @@
+[33mcommit 15fd583e95f8d5215394c8f0102de3b3b641efab[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Wed Mar 12 16:08:36 2025 -0300
+
+    Feat: Produto adicionado do carrinho ao card do Checkout
+
+[33mcommit e60616799b9fba6ec2ae26583f52aec363be3140[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Fri Mar 7 04:51:00 2025 -0300
+
+    Feat: corrigido svg de cifrão que estava sem cor
+
+[33mcommit 8cdeefc22df68f2dd753f0a971fadb28cfc50235[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Fri Mar 7 04:49:05 2025 -0300
+
+    Feat: criado e estilizado metodos de pagamento
+
+[33mcommit e6d15600f0a7e5cfbf98c5b3db27666b9909aa1d[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Fri Mar 7 03:36:28 2025 -0300
+
+    Feat: editado span com quantidade de itens no carrinho do component header
+
+[33mcommit a81557b6b74ef51dff9bc50aedb64c2e730d5814[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Wed Mar 5 17:16:00 2025 -0300
+
+    Feat: inicio da criação e estilização da pagina Checkout
+
+[33mcommit d417836a0cd76093db243af0e1de9e228ddf1724[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Tue Mar 4 17:01:12 2025 -0300
+
+    Feat: Criado component de constexo, falta finalizar o mesmo
+
+[33mcommit 01cdcc0acad9a4235be776b6cdd0680bc93f0777[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Sun Mar 2 02:10:59 2025 -0300
+
+    Feat: adicionada funcionalidade de aumentar ou diminuir o numero de cada produto
+
+[33mcommit f560f266c73283916ae9947b50c8df8ab1ad5d7d[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Fri Feb 28 17:50:38 2025 -0300
+
+    Feat: finalizada estilização da pagina home
+
+[33mcommit 4baced72c5924d6ff1ee2aa2afe25f2897c02235[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Wed Feb 26 02:26:43 2025 -0300
+
+    Feat: criado cabeçalho da home page
+
+[33mcommit 3ec55373747ebd35c47893655d457055faa99577[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Mon Feb 24 05:16:16 2025 -0300
+
+    Feat: criado componente Header
+
+[33mcommit a0fe06645779f0aafcf66824d76cccc59077ebec[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Sun Feb 23 15:22:46 2025 -0300
+
+    Feat: adicionado react-router-dom
+
+[33mcommit ea972dd877fbae6a299d8f44e66c809a3c5eebd8[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Fri Feb 21 04:03:13 2025 -0300
+
+    Feat: configurado estilos globais
+
+[33mcommit 2aae99f16f37d2c3fa263154a51d56519a1cf1e7[m
+Author: LuisHenriqueXavier <luishenriquexavier@outloo.com>
+Date:   Thu Feb 20 16:52:04 2025 -0300
+
+    first commit
