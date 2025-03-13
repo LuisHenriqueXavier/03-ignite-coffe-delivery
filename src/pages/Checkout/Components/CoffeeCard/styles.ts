@@ -5,6 +5,53 @@ export const CoffeeCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.3;
+    color: ${(props) => props.theme["base-text"]};
+  }
+
+  td:first-child {
+    text-align: left;
+  }
+
+  td:last-child {
+    text-align: right;
+  }
+
+  /* Estilo para a última linha */
+  tr:last-child td {
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: ${(props) => props.theme["base-background"]}; /* exemplo de fundo diferente */
+    color: ${(props) => props.theme["base-subtitle"]}; /* exemplo de cor de texto diferente */
+  }
+
+  button {
+    width: 135%;
+    padding: 1rem;
+    background: ${(props) => props.theme["yellow"]};
+    color: ${(props) => props.theme["white"]};
+    font-size: 1rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    border: 0;
+    cursor: pointer;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+      background: ${(props) => props.theme["yellow-dark"]};
+      color: ${(props) => props.theme["white"]};
+    }
+  }
+}
 `;
 
 export const CoffeeToBuy = styled.div`

@@ -48,6 +48,7 @@ export function Checkout() {
                 <h1>Cafés selecionados</h1>
                 <PaymentContent>
                     <CoffeeCard />
+                    
                 </PaymentContent>
             </section>
         </CheckoutContainer>

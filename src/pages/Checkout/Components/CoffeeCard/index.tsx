@@ -6,26 +6,32 @@ import { Separator } from "@radix-ui/react-separator";
 export function CoffeeCard() {
     const { products, updateProductQuantity, removeProductFromCart } = useCart(); // Obtém funções do contexto
 
-    // Função para calcular o total de itens
+    
     const calculateTotalItems = () => {
-        return products.reduce((total, item) => total + item.price, 0);
+        const total = products.reduce((total, item) => total + item.price, 0);
+        const formattedTotal = total.toFixed(2).replace('.', ',');
+        return formattedTotal;
     };
+    
 
-    // Função para calcular o valor total dos itens no carrinho
     const calculateTotalPrice = () => {
-        return products.reduce((total, item) => total + item.price * item.quantity, 0);
+        const total = products.reduce((total, item) => total + item.price * item.quantity, 0);
+        return total.toFixed(2).replace('.', ',');
     };
+    
 
-    // Função para calcular o custo de entrega (por exemplo, valor fixo ou variável)
     const calculateDelivery = () => {
-        // Suponhamos que a entrega seja um valor fixo de R$ 10,00
-        return 3.50;
+        const deliveryCost = 3.50;
+        return deliveryCost.toFixed(2).replace('.', ',');
     };
+    
 
     // Função para calcular o valor total (preço + entrega)
     const calculateTotal = () => {
-        return calculateTotalPrice() + calculateDelivery();
+        const total = parseFloat(calculateTotalPrice().replace(',', '.')) + parseFloat(calculateDelivery().replace(',', '.'));
+        return total.toFixed(2).replace('.', ',');
     };
+    
 
     function handleIncrease(id: string, quantity: number) {
         updateProductQuantity(id, quantity + 1);
@@ -72,7 +78,7 @@ export function CoffeeCard() {
                                 </CoffeeDetails>
                             </CoffeeInfo>
 
-                            <Separator style={{ margin: "2.5rem 0 1.5rem 0", height: "1px", backgroundColor: "#ccc", width: "140%" }} />
+                            <Separator style={{ margin: "2.5rem 0 1.5rem 0", height: "1px", backgroundColor: "#ccc", width: "135%" }} />
                         </div>
                         <label>R$ {item.price.toFixed(2)}</label>
                     </CoffeeToBuy>
@@ -86,16 +92,17 @@ export function CoffeeCard() {
                 <tbody>
                     <tr>
                         <td>Total de itens</td>
-                        <td>R$ {calculateTotalItems().toFixed(2)}</td>
+                        <td>R$ {calculateTotalItems()}</td>
                     </tr>
                     <tr>
                         <td>Entrega</td>
-                        <td>R$ {calculateDelivery().toFixed(2)}</td>
+                        <td>R$ {calculateDelivery()}</td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td>R$ {calculateTotal().toFixed(2)}</td>
+                        <td>R$ {calculateTotal()}</td>
                     </tr>
+                    <button type="submit">CONFIRMAR PEDIDO</button>
                 </tbody>
             </table>
         </CoffeeCardContainer>

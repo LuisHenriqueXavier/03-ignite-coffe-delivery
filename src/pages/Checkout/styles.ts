@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Separator as RadixSeparator } from "@radix-ui/react-separator";
 
 
 export const CheckoutContainer = styled.main`
@@ -183,10 +182,4 @@ export const PaymentContent = styled(CheckoutDefault).attrs({ as: 'div' })`
     border-radius: 6px 44px 6px 44px;
 `;
 
-export const Separator = styled(RadixSeparator)`
-    background-color: ${props => props.theme["base-button"]};
-    height: 1px;
-    width: 100%;
-    margin: 24px 0;
-`;
 
